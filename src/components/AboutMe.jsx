@@ -19,7 +19,6 @@ const AboutMe = ({ name }) => {
     threshold: 0.4,
     triggerOnce: true,
   });
-  const resumeUrl = '/_data/AmolChaudhari_SSE.pdf';
 
   // Variants for staggered animations
   const staggerVariants = {

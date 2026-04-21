@@ -1,8 +1,6 @@
 import PageHeader from "../../components/PageHeader";
-import Button from "../../components/Button";
 // /Users/amolchaudhari/Downloads/my-portfolio-main/src/components/Button
 const Resume = ({ brand }) => {
-  const resumeUrl = '/_data/AmolChaudhari_SSE.pdf';
   return (
     <section className="resume container">
       <PageHeader title="Resume" description="Uncover my expertise" />
