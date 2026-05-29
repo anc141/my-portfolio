@@ -6,6 +6,7 @@ import Loader from "./pages/loader/loader";
 import Header from "./components/Header";
 import Landing from "./pages/landing/Landing";
 import Portfolio from "./pages/portfolio/Portfolio";
+import Playground from "./pages/playground/Playground";
 import ProjectDetails from "./pages/portfolio/[project]/ProjectDetails";
 import Resume from "./pages/resume/Resume";
 import Contact from "./pages/contact/Contact";
@@ -96,6 +97,8 @@ function App() {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Landing name={personalDetails.name} tagline={personalDetails.tagline} />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/playground" element={<Playground />} />
+            <Route path="/Playground" element={<Playground />} />
             <Route path="/resume" element={<Resume brand={personalDetails.brand} />} />
             {/* <Route path="/resume" element={<Resume personalDetails={personalDetails} />} /> */}
             <Route path="/About" element={ <AboutMe/> } />

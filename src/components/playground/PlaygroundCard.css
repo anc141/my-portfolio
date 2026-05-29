@@ -1,0 +1,156 @@
+/* --- Playground Card --- */
+
+.playground-card-wrapper {
+  margin: 0;
+}
+
+.playground-card {
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 14px;
+  min-height: 104px;
+  padding: 16px;
+}
+
+.playground-card::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0.3;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.playground-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.playground-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  transition: all 0.9s ease-in-out;
+}
+
+.playground-card-title {
+  font-size: 16px;
+  padding: 0;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.playground-card-description {
+  font-size: 12px;
+  margin: 0 0 10px 0;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+
+.try-demo {
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.3s ease-in-out;
+}
+
+.try-demo .arrow {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* --- Hover Effects --- */
+@media (min-width: 992px) {
+  .playground-card:hover {
+    transform: translateX(4px);
+    border-color: rgba(72, 163, 198, 0.45);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+  }
+
+  .playground-card:hover::before {
+    opacity: 0.15;
+  }
+
+  .playground-card:hover .playground-text-container {
+    transform: none;
+  }
+
+  .playground-card:hover .try-demo {
+    gap: 12px;
+  }
+
+  .playground-card:hover .try-demo .arrow {
+    transform: translateX(4px);
+  }
+}
+
+.playground-card.active {
+  border-color: var(--hl-color);
+  box-shadow: 0 0 0 1px rgba(72, 163, 198, 0.45);
+}
+
+/* --- Mobile Styles --- */
+@media (max-width: 991px) {
+  .playground-card {
+    min-height: auto;
+    gap: 14px;
+  }
+
+  .playground-icon-container {
+    font-size: 38px;
+    width: 58px;
+    height: 58px;
+  }
+
+  .playground-card-title {
+    font-size: 18px;
+  }
+
+  .playground-card-description {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 575px) {
+  .playground-icon-container {
+    font-size: 40px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .playground-card {
+    padding: 15px !important;
+  }
+
+  .playground-card-title {
+    font-size: 18px;
+  }
+
+  .playground-card-description {
+    font-size: 12px;
+  }
+}

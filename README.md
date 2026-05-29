@@ -126,6 +126,31 @@ To get a local copy up and running follow these simple example steps.
    npm install
    ```
 
+3. Configure environment variables
+   ```sh
+   cp .env.example .env
+   ```
+
+   Required for AI tools:
+   ```sh
+   GROQ_API_KEY=your_groq_api_key_here
+   ```
+
+   Optional for research-grounded debate evidence:
+   ```sh
+   TAVILY_API_KEY=your_tavily_api_key_here
+   ```
+
+### Vercel Deployment
+
+Add these in Vercel Project Settings > Environment Variables:
+
+- `GROQ_API_KEY` for the AI chatbot, code reviewer, interviewer, and debate generator.
+- `TAVILY_API_KEY` to enable web-search grounding for debate topics.
+- `REACT_APP_ACCESS_KEY` if you use the contact form provider.
+
+Do not expose `GROQ_API_KEY` or `TAVILY_API_KEY` with a `REACT_APP_` prefix. They are used only inside Vercel serverless functions in the `api/` folder.
+
   <p align="right"><a href="#readme-top">back to top</a></p>
   
  

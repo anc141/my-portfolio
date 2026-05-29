@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { apiUrl, readApiError } from "../utils/api";
 import "./chatbot.css";
 
 const SUGGESTED_QUESTIONS = [
@@ -54,14 +55,14 @@ const Chatbot = () => {
           content: msg.content,
         }));
 
-      const response = await fetch("/api/chat", {
+      const response = await fetch(apiUrl("/api/chat"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: apiMessages }),
       });
 
       if (!response.ok) {
-        throw new Error("Failed to get response");
+        throw new Error(await readApiError(response, "Failed to get response"));
       }
 
       const data = await response.json();

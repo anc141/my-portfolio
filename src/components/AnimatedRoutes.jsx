@@ -7,6 +7,7 @@ import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Landing from "../pages/landing/Landing";
 import About from "../pages/about/About";
 import Portfolio from "../pages/portfolio/Portfolio";
+import Playground from "../pages/playground/Playground";
 import Contact from "../pages/contact/Contact";
 import PageNotFound from "../pages/404/PageNotFound";
 
@@ -29,6 +30,7 @@ const AnimatedRoutes = ({ personalDetails }) => {
         }
       />
       <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/playground" element={<Playground />} />
       <Route
         path="/contact"
         element={
